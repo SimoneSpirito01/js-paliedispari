@@ -21,13 +21,25 @@ if (palindroma){
 document.querySelector('.check').innerHTML = x;
 
 function pal(parola){
-    const revWord = [];
-    for (let i = parola.length - 1; i >= 0; i--){
-        revWord.push(parola[i]);
-        console.log(revWord);
+
+    // soluzione 1
+    // const revWord = [];
+    // for (let i = parola.length - 1; i >= 0; i--){
+    //     revWord.push(parola[i]);
+    //     console.log(revWord);
+    // }
+    // if (parola == revWord.join('')){
+    //     return true;
+    // }
+    // return false;
+
+    // soluzione 2
+    let x = parola.length
+    for (let i = 0; i < x; i++){
+        x -= 1;
+        if (parola[i] != parola[x]){
+            return false;
+        }
     }
-    if (parola == revWord.join('')){
-        return true;
-    }
-    return false;
+    return true;
 }
